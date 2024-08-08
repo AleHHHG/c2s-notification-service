@@ -9,12 +9,6 @@ Se comunica com o serviço principal e com o serviço de scraping via RabbitMQ.
 
 Alterar o arquivo de configuração rabbitmq.yml(Enviada juntamente com o teste) e database.yml
 
-Renomear .env_sample para .env
-
-```bash
-  mv .env_sample .env
-```
-
 Execute as migrações
 
 ```bash
