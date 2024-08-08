@@ -7,27 +7,23 @@ Se comunica com o serviço principal e com o serviço de scraping via RabbitMQ.
 
 ## Rodando localmente
 
-Build o container
+Alterar o arquivo de configuração rabbitmq.yml(Enviada juntamente com o teste) e database.yml
+
+Renomear .env_sample para .env
 
 ```bash
-  docker compose build
+  mv .env_sample .env
 ```
 
 Execute as migrações
 
 ```bash
-  docker compose run web rake db:create
-  docker compose run web rake db:migrate
+  rails db:create
+  rails db:migrate
 ```
 
-Execute o container
+Execute a aplicação
 
 ```bash
-  docker compose up
-```
-
-Execute os teste unitários
-
-```bash
-  docker compose run web bash -c "RAILS_ENV=test bundle exec rspec"
+  rake sneakers:run
 ```
